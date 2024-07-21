@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="BaseballGameCreator.TitlePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaseballGameCreator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="300" />
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Center" Grid.Row="0">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Baseball Game Creator" TextWrapping="Wrap"  FontSize="36" Width="407" TextAlignment="Center" TextDecorations="Underline" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Created by Andrew Holtzman-Marga" TextWrapping="Wrap" FontSize="20" Width="407" TextAlignment="Center" Margin="0,15,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <Button Click="startNewGame_Click" HorizontalAlignment="Center" Content="START A NEW GAME" FontSize="36" BorderBrush="Black" BorderThickness="2" Height="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" VerticalAlignment="Center">
+            <TextBlock Text="Please click the button below to find" HorizontalAlignment="Center" FontSize="26" Margin="0,0,0,2"/>
+            <TextBlock Text="all game notes, instructions, and files!" HorizontalAlignment="Center" FontSize="26" Margin="0,0,0,5"/>
+            <Button Click="VisitGithub_Click" HorizontalAlignment="Center" Content="Visit Github Page" FontSize="26" Margin="0,10,0,0" BorderBrush="Black" BorderThickness="2" Height="75"/>
+        </StackPanel>
+    </Grid>
+</Page>
