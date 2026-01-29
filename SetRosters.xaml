@@ -8,141 +8,210 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="55" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="35" />
-        </Grid.RowDefinitions>
+    <!-- Wrap content so the page is usable on small screens -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="55" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="15,15,0,0" Grid.ColumnSpan="4">
-            <TextBlock Text="Set lineups for both teams:" FontSize="30"/>
-        </StackPanel>
+            <StackPanel Margin="15,15,0,0" Grid.ColumnSpan="4">
+                <TextBlock Text="Set lineups for both teams:" FontSize="30"/>
+            </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <TextBlock Text="Away Team Name:" FontSize="14" HorizontalAlignment="Center"/>
-            <TextBox x:Name="ATName" Width="200" Height="35" />
-        </StackPanel>
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                <TextBlock Text="Away Team Name:" FontSize="14" HorizontalAlignment="Center"/>
+                <TextBox x:Name="ATName" Width="200" Height="35" />
+            </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <TextBlock Text="Home Team Name:" FontSize="14" HorizontalAlignment="Center"/>
-            <TextBox x:Name="HTName" Width="200" Height="35"/>
-        </StackPanel>
+            <StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                <TextBlock Text="Home Team Name:" FontSize="14" HorizontalAlignment="Center"/>
+                <TextBox x:Name="HTName" Width="200" Height="35"/>
+            </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
-            <TextBlock Text="#" FontSize="22"/>
-            <TextBlock Text="1" FontSize="22"/>
-            <TextBlock Text="2" FontSize="22"/>
-            <TextBlock Text="3" FontSize="22"/>
-            <TextBlock Text="4" FontSize="22"/>
-            <TextBlock Text="5" FontSize="22"/>
-            <TextBlock Text="6" FontSize="22"/>
-            <TextBlock Text="7" FontSize="22"/>
-            <TextBlock Text="8" FontSize="22"/>
-            <TextBlock Text="9" FontSize="22"/>
-        </StackPanel>
+            <!-- LINEUPS: use a grid with explicit rows so labels align with textboxes -->
+            <Grid Grid.Row="2" Grid.ColumnSpan="4" Margin="8,4,8,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <TextBlock Text="LINEUP:"/>
-            <TextBox x:Name="ATBatter1"/>
-            <TextBox x:Name="ATBatter2"/>
-            <TextBox x:Name="ATBatter3"/>
-            <TextBox x:Name="ATBatter4"/>
-            <TextBox x:Name="ATBatter5"/>
-            <TextBox x:Name="ATBatter6"/>
-            <TextBox x:Name="ATBatter7"/>
-            <TextBox x:Name="ATBatter8"/>
-            <TextBox x:Name="ATBatter9"/>
-        </StackPanel>
+                <!-- Header row -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">
-            <TextBlock Text="#" FontSize="22"/>
-            <TextBlock Text="1" FontSize="22"/>
-            <TextBlock Text="2" FontSize="22"/>
-            <TextBlock Text="3" FontSize="22"/>
-            <TextBlock Text="4" FontSize="22"/>
-            <TextBlock Text="5" FontSize="22"/>
-            <TextBlock Text="6" FontSize="22"/>
-            <TextBlock Text="7" FontSize="22"/>
-            <TextBlock Text="8" FontSize="22"/>
-            <TextBlock Text="9" FontSize="22"/>
-        </StackPanel>
+                <!-- Header labels -->
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="LINEUP:" Margin="4,0" FontWeight="SemiBold"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="LINEUP:" Margin="4,0" FontWeight="SemiBold"/>
 
-        <StackPanel Grid.Row="2" Grid.Column="3">
-            <TextBlock Text="LINEUP:"/>
-            <TextBox x:Name="HTBatter1"/>
-            <TextBox x:Name="HTBatter2"/>
-            <TextBox x:Name="HTBatter3"/>
-            <TextBox x:Name="HTBatter4"/>
-            <TextBox x:Name="HTBatter5"/>
-            <TextBox x:Name="HTBatter6"/>
-            <TextBox x:Name="HTBatter7"/>
-            <TextBox x:Name="HTBatter8"/>
-            <TextBox x:Name="HTBatter9"/>
-        </StackPanel>
+                <!-- Number column (left) and Away batters -->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="1" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="ATBatter1" Margin="4,2" MinWidth="160"/>
 
-        <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">
-            <TextBlock Text="Pos" FontSize="16"/>
-            <TextBlock Text="SP" FontSize="22"/>
-            <TextBlock Text="RP" FontSize="22"/>
-            <TextBlock Text="RP" FontSize="22"/>
-            <TextBlock Text="RP" FontSize="22"/>
-            <TextBlock Text="SU" FontSize="22"/>
-            <TextBlock Text="CL" FontSize="22"/>
-            <TextBlock Text="BE" FontSize="22"/>
-            <TextBlock Text="BE" FontSize="22"/>
-            <TextBlock Text="BE" FontSize="22"/>
-        </StackPanel>
-        
-        <StackPanel Grid.Row="3" Grid.Column="1">
-            <TextBlock Text="ROTATION, BULLPEN, and BENCH:" FontSize="10"/>
-            <TextBox x:Name="ATSPitcher"/>
-            <TextBox x:Name="ATRPitcher1"/>
-            <TextBox x:Name="ATRPitcher2"/>
-            <TextBox x:Name="ATRPitcher3"/>
-            <TextBox x:Name="ATSetupMan"/>
-            <TextBox x:Name="ATCloser"/>
-            <TextBox x:Name="ATBench1"/>
-            <TextBox x:Name="ATBench2"/>
-            <TextBox x:Name="ATBench3"/>
-        </StackPanel>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="2" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="ATBatter2" Margin="4,2"/>
 
-        <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
-            <TextBlock Text="Pos" FontSize="16"/>
-            <TextBlock Text="SP" FontSize="22"/>
-            <TextBlock Text="RP" FontSize="22"/>
-            <TextBlock Text="RP" FontSize="22"/>
-            <TextBlock Text="RP" FontSize="22"/>
-            <TextBlock Text="SU" FontSize="22"/>
-            <TextBlock Text="CL" FontSize="22"/>
-            <TextBlock Text="BE" FontSize="22"/>
-            <TextBlock Text="BE" FontSize="22"/>
-            <TextBlock Text="BE" FontSize="22"/>
-        </StackPanel>
-        
-        <StackPanel Grid.Row="3" Grid.Column="3">
-            <TextBlock Text="ROTATION, BULLPEN, and BENCH:" FontSize="10"/>
-            <TextBox x:Name="HTSPitcher"/>
-            <TextBox x:Name="HTRPitcher1"/>
-            <TextBox x:Name="HTRPitcher2"/>
-            <TextBox x:Name="HTRPitcher3"/>
-            <TextBox x:Name="HTSetupMan"/>
-            <TextBox x:Name="HTCloser"/>
-            <TextBox x:Name="HTBench1"/>
-            <TextBox x:Name="HTBench2"/>
-            <TextBox x:Name="HTBench3"/>
-        </StackPanel>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="3" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="ATBatter3" Margin="4,2"/>
 
-        <Button Click="nextScreen_Click" Grid.Row="4" Grid.ColumnSpan="5" Width="400" FontSize="18" Content="BEGIN THE GAME!" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="4" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="ATBatter4" Margin="4,2"/>
 
-    </Grid>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="5" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="ATBatter5" Margin="4,2"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="6" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="ATBatter6" Margin="4,2"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="7" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="ATBatter7" Margin="4,2"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="8" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="8" Grid.Column="1" x:Name="ATBatter8" Margin="4,2"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="9" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="9" Grid.Column="1" x:Name="ATBatter9" Margin="4,2"/>
+
+                <!-- Number column (right) and Home batters -->
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="1" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="3" x:Name="HTBatter1" Margin="4,2" MinWidth="160"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="2" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="3" x:Name="HTBatter2" Margin="4,2"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="3" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="3" x:Name="HTBatter3" Margin="4,2"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="2" Text="4" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="3" x:Name="HTBatter4" Margin="4,2"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="2" Text="5" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="5" Grid.Column="3" x:Name="HTBatter5" Margin="4,2"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="2" Text="6" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="6" Grid.Column="3" x:Name="HTBatter6" Margin="4,2"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="2" Text="7" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="7" Grid.Column="3" x:Name="HTBatter7" Margin="4,2"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="2" Text="8" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="8" Grid.Column="3" x:Name="HTBatter8" Margin="4,2"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="2" Text="9" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="9" Grid.Column="3" x:Name="HTBatter9" Margin="4,2"/>
+            </Grid>
+
+            <!-- ROTATION / BULLPEN / BENCH: same alignment strategy -->
+            <Grid Grid.Row="3" Grid.ColumnSpan="4" Margin="8,4,8,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Headers -->
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="ROTATION, BULLPEN, and BENCH:" FontSize="12" Margin="4,0" FontWeight="SemiBold"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="ROTATION, BULLPEN, and BENCH:" FontSize="12" Margin="4,0" FontWeight="SemiBold"/>
+
+                <!-- Left pos labels and away pitchers/bench -->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="SP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="ATSPitcher" Margin="4,2"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="ATRPitcher1" Margin="4,2"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="ATRPitcher2" Margin="4,2"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="ATRPitcher3" Margin="4,2"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="SU" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="ATSetupMan" Margin="4,2"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="CL" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="ATCloser" Margin="4,2"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="ATBench1" Margin="4,2"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="8" Grid.Column="1" x:Name="ATBench2" Margin="4,2"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="9" Grid.Column="1" x:Name="ATBench3" Margin="4,2"/>
+
+                <!-- Right pos labels and home pitchers/bench -->
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="SP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="3" x:Name="HTSPitcher" Margin="4,2"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="3" x:Name="HTRPitcher1" Margin="4,2"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="3" x:Name="HTRPitcher2" Margin="4,2"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="2" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="3" x:Name="HTRPitcher3" Margin="4,2"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="2" Text="SU" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="5" Grid.Column="3" x:Name="HTSetupMan" Margin="4,2"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="2" Text="CL" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="6" Grid.Column="3" x:Name="HTCloser" Margin="4,2"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="2" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="7" Grid.Column="3" x:Name="HTBench1" Margin="4,2"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="2" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="8" Grid.Column="3" x:Name="HTBench2" Margin="4,2"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="2" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="9" Grid.Column="3" x:Name="HTBench3" Margin="4,2"/>
+            </Grid>
+
+            <!-- Fixed bottom button: correct column span and centered -->
+            <Button Click="nextScreen_Click"
+                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"
+                    Width="400" FontSize="18" Content="BEGIN THE GAME!"
+                    HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2" Margin="0,4"/>
+        </Grid>
+    </ScrollViewer>
 </Page>
