@@ -39,5 +39,10 @@ namespace BaseballGameCreator
 
             await Windows.System.Launcher.LaunchUriAsync(uri);
         }
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
