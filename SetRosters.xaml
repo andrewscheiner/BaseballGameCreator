@@ -69,59 +69,59 @@
 
 				<!-- Number column (left) and Away batters -->
 				<TextBlock Grid.Row="1" Grid.Column="0" Text="1" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="1" Grid.Column="1" x:Name="ATBatter1" Margin="4,2" MinWidth="160"/>
+				<TextBox Grid.Row="1" Grid.Column="1" x:Name="ATBatter1" Margin="4,2" MinWidth="160" PlaceholderText="Away Leadoff Hitter"/>
 
 				<TextBlock Grid.Row="2" Grid.Column="0" Text="2" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="2" Grid.Column="1" x:Name="ATBatter2" Margin="4,2"/>
+				<TextBox Grid.Row="2" Grid.Column="1" x:Name="ATBatter2" Margin="4,2" PlaceholderText="Away Hitter #2"/>
 
 				<TextBlock Grid.Row="3" Grid.Column="0" Text="3" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="3" Grid.Column="1" x:Name="ATBatter3" Margin="4,2"/>
+				<TextBox Grid.Row="3" Grid.Column="1" x:Name="ATBatter3" Margin="4,2" PlaceholderText="Away Hitter #3"/>
 
 				<TextBlock Grid.Row="4" Grid.Column="0" Text="4" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="4" Grid.Column="1" x:Name="ATBatter4" Margin="4,2"/>
+				<TextBox Grid.Row="4" Grid.Column="1" x:Name="ATBatter4" Margin="4,2" PlaceholderText="Away Cleanup Hitter"/>
 
 				<TextBlock Grid.Row="5" Grid.Column="0" Text="5" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="5" Grid.Column="1" x:Name="ATBatter5" Margin="4,2"/>
+				<TextBox Grid.Row="5" Grid.Column="1" x:Name="ATBatter5" Margin="4,2" PlaceholderText="Away Hitter #5"/>
 
 				<TextBlock Grid.Row="6" Grid.Column="0" Text="6" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="6" Grid.Column="1" x:Name="ATBatter6" Margin="4,2"/>
+				<TextBox Grid.Row="6" Grid.Column="1" x:Name="ATBatter6" Margin="4,2" PlaceholderText="Away Hitter #6"/>
 
 				<TextBlock Grid.Row="7" Grid.Column="0" Text="7" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="7" Grid.Column="1" x:Name="ATBatter7" Margin="4,2"/>
+				<TextBox Grid.Row="7" Grid.Column="1" x:Name="ATBatter7" Margin="4,2" PlaceholderText="Away Hitter #7"/>
 
 				<TextBlock Grid.Row="8" Grid.Column="0" Text="8" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="8" Grid.Column="1" x:Name="ATBatter8" Margin="4,2"/>
+				<TextBox Grid.Row="8" Grid.Column="1" x:Name="ATBatter8" Margin="4,2" PlaceholderText="Away Hitter #8"/>
 
 				<TextBlock Grid.Row="9" Grid.Column="0" Text="9" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="9" Grid.Column="1" x:Name="ATBatter9" Margin="4,2"/>
+				<TextBox Grid.Row="9" Grid.Column="1" x:Name="ATBatter9" Margin="4,2" PlaceholderText="Away Hitter #9"/>
 
 				<!-- Number column (right) and Home batters -->
 				<TextBlock Grid.Row="1" Grid.Column="2" Text="1" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="1" Grid.Column="3" x:Name="HTBatter1" Margin="4,2" MinWidth="160"/>
+				<TextBox Grid.Row="1" Grid.Column="3" x:Name="HTBatter1" Margin="4,2" MinWidth="160" PlaceholderText="Home Leadoff Hitter"/>
 
 				<TextBlock Grid.Row="2" Grid.Column="2" Text="2" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="2" Grid.Column="3" x:Name="HTBatter2" Margin="4,2"/>
+				<TextBox Grid.Row="2" Grid.Column="3" x:Name="HTBatter2" Margin="4,2" PlaceholderText="Home Hitter #2"/>
 
 				<TextBlock Grid.Row="3" Grid.Column="2" Text="3" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="3" Grid.Column="3" x:Name="HTBatter3" Margin="4,2"/>
+				<TextBox Grid.Row="3" Grid.Column="3" x:Name="HTBatter3" Margin="4,2" PlaceholderText="Home Hitter #3"/>
 
 				<TextBlock Grid.Row="4" Grid.Column="2" Text="4" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="4" Grid.Column="3" x:Name="HTBatter4" Margin="4,2"/>
+				<TextBox Grid.Row="4" Grid.Column="3" x:Name="HTBatter4" Margin="4,2" PlaceholderText="Home Cleanup Hitter"/>
 
 				<TextBlock Grid.Row="5" Grid.Column="2" Text="5" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="5" Grid.Column="3" x:Name="HTBatter5" Margin="4,2"/>
+				<TextBox Grid.Row="5" Grid.Column="3" x:Name="HTBatter5" Margin="4,2" PlaceholderText="Home Hitter #5"/>
 
 				<TextBlock Grid.Row="6" Grid.Column="2" Text="6" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="6" Grid.Column="3" x:Name="HTBatter6" Margin="4,2"/>
+				<TextBox Grid.Row="6" Grid.Column="3" x:Name="HTBatter6" Margin="4,2" PlaceholderText="Home Hitter #6"/>
 
 				<TextBlock Grid.Row="7" Grid.Column="2" Text="7" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="7" Grid.Column="3" x:Name="HTBatter7" Margin="4,2"/>
+				<TextBox Grid.Row="7" Grid.Column="3" x:Name="HTBatter7" Margin="4,2" PlaceholderText="Home Hitter #7"/>
 
 				<TextBlock Grid.Row="8" Grid.Column="2" Text="8" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="8" Grid.Column="3" x:Name="HTBatter8" Margin="4,2"/>
+				<TextBox Grid.Row="8" Grid.Column="3" x:Name="HTBatter8" Margin="4,2" PlaceholderText="Home Hitter #8"/>
 
 				<TextBlock Grid.Row="9" Grid.Column="2" Text="9" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="9" Grid.Column="3" x:Name="HTBatter9" Margin="4,2"/>
+				<TextBox Grid.Row="9" Grid.Column="3" x:Name="HTBatter9" Margin="4,2" PlaceholderText="Home Hitter #9"/>
 			</Grid>
 
 			<!-- ROTATION / BULLPEN / BENCH: same alignment strategy -->
@@ -152,65 +152,65 @@
 
 				<!-- Left pos labels and away pitchers/bench -->
 				<TextBlock Grid.Row="1" Grid.Column="0" Text="SP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="1" Grid.Column="1" x:Name="ATSPitcher" Margin="4,2"/>
+				<TextBox Grid.Row="1" Grid.Column="1" x:Name="ATSPitcher" Margin="4,2" PlaceholderText="Away Starting Pitcher"/>
 
 				<TextBlock Grid.Row="2" Grid.Column="0" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="2" Grid.Column="1" x:Name="ATRPitcher1" Margin="4,2"/>
+				<TextBox Grid.Row="2" Grid.Column="1" x:Name="ATRPitcher1" Margin="4,2" PlaceholderText="Away Reliever"/>
 
 				<TextBlock Grid.Row="3" Grid.Column="0" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="3" Grid.Column="1" x:Name="ATRPitcher2" Margin="4,2"/>
+				<TextBox Grid.Row="3" Grid.Column="1" x:Name="ATRPitcher2" Margin="4,2" PlaceholderText="Away Reliever"/>
 
 				<TextBlock Grid.Row="4" Grid.Column="0" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="4" Grid.Column="1" x:Name="ATRPitcher3" Margin="4,2"/>
+				<TextBox Grid.Row="4" Grid.Column="1" x:Name="ATRPitcher3" Margin="4,2" PlaceholderText="Away Reliever"/>
 
 				<TextBlock Grid.Row="5" Grid.Column="0" Text="SU" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="5" Grid.Column="1" x:Name="ATSetupMan" Margin="4,2"/>
+				<TextBox Grid.Row="5" Grid.Column="1" x:Name="ATSetupMan" Margin="4,2" PlaceholderText="Away Setup Man"/>
 
 				<TextBlock Grid.Row="6" Grid.Column="0" Text="CL" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="6" Grid.Column="1" x:Name="ATCloser" Margin="4,2"/>
+				<TextBox Grid.Row="6" Grid.Column="1" x:Name="ATCloser" Margin="4,2" PlaceholderText="Away Closer"/>
 
 				<TextBlock Grid.Row="7" Grid.Column="0" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="7" Grid.Column="1" x:Name="ATBench1" Margin="4,2"/>
+				<TextBox Grid.Row="7" Grid.Column="1" x:Name="ATBench1" Margin="4,2" PlaceholderText="Away Bench Hitter"/>
 
 				<TextBlock Grid.Row="8" Grid.Column="0" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="8" Grid.Column="1" x:Name="ATBench2" Margin="4,2"/>
+				<TextBox Grid.Row="8" Grid.Column="1" x:Name="ATBench2" Margin="4,2" PlaceholderText="Away Bench Hitter"/>
 
 				<TextBlock Grid.Row="9" Grid.Column="0" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="9" Grid.Column="1" x:Name="ATBench3" Margin="4,2"/>
+				<TextBox Grid.Row="9" Grid.Column="1" x:Name="ATBench3" Margin="4,2" PlaceholderText="Away Bench Hitter"/>
 
 				<!-- Right pos labels and home pitchers/bench -->
 				<TextBlock Grid.Row="1" Grid.Column="2" Text="SP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="1" Grid.Column="3" x:Name="HTSPitcher" Margin="4,2"/>
+				<TextBox Grid.Row="1" Grid.Column="3" x:Name="HTSPitcher" Margin="4,2" PlaceholderText="Home Starting Pitcher"/>
 
 				<TextBlock Grid.Row="2" Grid.Column="2" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="2" Grid.Column="3" x:Name="HTRPitcher1" Margin="4,2"/>
+				<TextBox Grid.Row="2" Grid.Column="3" x:Name="HTRPitcher1" Margin="4,2" PlaceholderText="Home Reliever"/>
 
 				<TextBlock Grid.Row="3" Grid.Column="2" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="3" Grid.Column="3" x:Name="HTRPitcher2" Margin="4,2"/>
+				<TextBox Grid.Row="3" Grid.Column="3" x:Name="HTRPitcher2" Margin="4,2" PlaceholderText="Home Reliever"/>
 
 				<TextBlock Grid.Row="4" Grid.Column="2" Text="RP" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="4" Grid.Column="3" x:Name="HTRPitcher3" Margin="4,2"/>
+				<TextBox Grid.Row="4" Grid.Column="3" x:Name="HTRPitcher3" Margin="4,2" PlaceholderText="Home Reliever"/>
 
 				<TextBlock Grid.Row="5" Grid.Column="2" Text="SU" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="5" Grid.Column="3" x:Name="HTSetupMan" Margin="4,2"/>
+				<TextBox Grid.Row="5" Grid.Column="3" x:Name="HTSetupMan" Margin="4,2" PlaceholderText="Home Setup Man"/>
 
 				<TextBlock Grid.Row="6" Grid.Column="2" Text="CL" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="6" Grid.Column="3" x:Name="HTCloser" Margin="4,2"/>
+				<TextBox Grid.Row="6" Grid.Column="3" x:Name="HTCloser" Margin="4,2" PlaceholderText="Home Closer"/>
 
 				<TextBlock Grid.Row="7" Grid.Column="2" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="7" Grid.Column="3" x:Name="HTBench1" Margin="4,2"/>
+				<TextBox Grid.Row="7" Grid.Column="3" x:Name="HTBench1" Margin="4,2" PlaceholderText="Home Bench Hitter"/>
 
 				<TextBlock Grid.Row="8" Grid.Column="2" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="8" Grid.Column="3" x:Name="HTBench2" Margin="4,2"/>
+				<TextBox Grid.Row="8" Grid.Column="3" x:Name="HTBench2" Margin="4,2" PlaceholderText="Home Bench Hitter"/>
 
 				<TextBlock Grid.Row="9" Grid.Column="2" Text="BE" FontSize="16" HorizontalAlignment="Center"/>
-				<TextBox Grid.Row="9" Grid.Column="3" x:Name="HTBench3" Margin="4,2"/>
+				<TextBox Grid.Row="9" Grid.Column="3" x:Name="HTBench3" Margin="4,2" PlaceholderText="Home Bench Hitter"/>
 			</Grid>
 
 			<!-- Fixed bottom button: correct column span and centered -->
-			<Button Click="nextScreen_Click"
-                    Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
-                    Width="400" FontSize="18" Content="BEGIN THE GAME!" BorderBrush="Black" BorderThickness="2" Margin="506,0,0,0" Height="35"/>
+			<Button Click="nextScreen_Click" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Width="400" FontSize="18" BorderBrush="Black" BorderThickness="2" 
+			Margin="0,0,0,0" Height="35" HorizontalAlignment="Center"
+			Content="BEGIN THE GAME!" />
 		</Grid>
 	</ScrollViewer>
 </Page>
