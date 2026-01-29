@@ -105,6 +105,7 @@ namespace BaseballGameCreator
         {
             return homeTeamBatters;
         }
+        // PBE = Pitchers + Bench
         public static ArrayList getATPBE()
         {
             return awayTeamPBE;
