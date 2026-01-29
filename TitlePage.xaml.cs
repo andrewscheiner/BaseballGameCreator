@@ -34,7 +34,7 @@ namespace BaseballGameCreator
 
         private async void VisitGithub_Click(object sender, RoutedEventArgs e)
         {
-            String website = @"https://github.com/Baseballfan5303/VS-BaseballGameCreator";
+            String website = @"https://github.com/andrewscheiner/BaseballGameCreator";
             var uri = new Uri(website);
 
             await Windows.System.Launcher.LaunchUriAsync(uri);

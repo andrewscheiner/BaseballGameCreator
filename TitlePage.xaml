@@ -17,7 +17,7 @@
 
         <StackPanel VerticalAlignment="Center" Grid.Row="0">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Baseball Game Creator" TextWrapping="Wrap"  FontSize="36" Width="407" TextAlignment="Center" TextDecorations="Underline" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Created by Andrew Holtzman-Marga" TextWrapping="Wrap" FontSize="20" Width="407" TextAlignment="Center" Margin="0,15,0,0"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Created by Andrew Scheiner" TextWrapping="Wrap" FontSize="20" Width="407" TextAlignment="Center" Margin="0,15,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
