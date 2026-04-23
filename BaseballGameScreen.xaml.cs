@@ -60,7 +60,10 @@ namespace BaseballGameCreator
 
         //public static string path1, pathA, pathB, pathX;
 
-        public BaseballGameScreen()
+        //get team name from SetRosters
+        public static string setRosters_getATName, setRosters_getHTName;
+
+		public BaseballGameScreen()
         {
             this.InitializeComponent();
 
@@ -85,30 +88,34 @@ namespace BaseballGameCreator
 
             awayTeamBattersX = SetRosters.getATBatters(); homeTeamBattersX = SetRosters.getHTBatters(); awayTeamPBEX = SetRosters.getATPBE(); homeTeamPBEX = SetRosters.getHTPBE();
 
-            //add check if team name is less than length 3, if so, use whole name instead of substring
-            if (SetRosters.getATName().Length < 3)
+            //get team name from SetRosters
+		    setRosters_getATName = SetRosters.getATName();
+			setRosters_getHTName = SetRosters.getHTName();
+
+			//add check if team name is less than length 3, if so, use whole name instead of substring
+			if (setRosters_getATName.Length < 3)
             {
-                ATNameT.Text = SetRosters.getATName();
-                ATNameXYZ = SetRosters.getATName();
-                awayPlayerA.PlaceholderText = SetRosters.getATName();
+                ATNameT.Text = setRosters_getATName;
+                ATNameXYZ = setRosters_getATName;
+                awayPlayerA.PlaceholderText = setRosters_getATName;
 			}
             else
             {
-                ATNameT.Text = SetRosters.getATName().Substring(0, 3);
-                ATNameXYZ = SetRosters.getATName().Substring(0, 3);
-				awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                ATNameT.Text = setRosters_getATName.Substring(0, 3);
+                ATNameXYZ = setRosters_getATName.Substring(0, 3);
+				awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
 			}
-            if (SetRosters.getHTName().Length < 3)
+            if (setRosters_getHTName.Length < 3)
             {
-				HTNameT.Text = SetRosters.getHTName();
-				HTNameXYZ = SetRosters.getHTName();
-                homePlayerA.PlaceholderText = SetRosters.getHTName();
+				HTNameT.Text = setRosters_getHTName;
+				HTNameXYZ = setRosters_getHTName;
+                homePlayerA.PlaceholderText = setRosters_getHTName;
 			}
             else
             {
-				HTNameT.Text = SetRosters.getHTName().Substring(0, 3);
-				HTNameXYZ = SetRosters.getHTName().Substring(0, 3);
-				homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+				HTNameT.Text = setRosters_getHTName.Substring(0, 3);
+				HTNameXYZ = setRosters_getHTName.Substring(0, 3);
+				homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
 			}
                 
             for (int i = 1; i < awayTeamPBEX.Count; i++)
@@ -178,8 +185,8 @@ namespace BaseballGameCreator
         private async void GameOver_Click(object sender, RoutedEventArgs e)
         {
             await Windows.Storage.FileIO.AppendTextAsync(gameLog, "Game ended at inning: " + TBInd.Text + inn2.ToString() + "\n");
-            await Windows.Storage.FileIO.AppendTextAsync(gameLog, SetRosters.getATName() + " - Score: " + atScore.ToString() + "\n");
-            await Windows.Storage.FileIO.AppendTextAsync(gameLog, SetRosters.getHTName() + " - Score: " + htScore.ToString() + "\n");
+            await Windows.Storage.FileIO.AppendTextAsync(gameLog, setRosters_getATName + " - Score: " + atScore.ToString() + "\n");
+            await Windows.Storage.FileIO.AppendTextAsync(gameLog, setRosters_getHTName + " - Score: " + htScore.ToString() + "\n");
             await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentAwayPitcher + " - Pitchcount: " + awayPitchesThrown.ToString() + "\n");
             await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentHomePitcher + " - Pitchcount: " + homePitchesThrown.ToString() + "\n");
 
@@ -200,53 +207,53 @@ namespace BaseballGameCreator
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentAwayPitcher + " has been replaced by " + player + ". " + currentAwayPitcher + " threw: " + awayPitchesThrown.ToString() + " pitches." + "\n");
                 currentAwayPitcher = player;
                 awayPitchesThrown = 0;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
             else if (player.Equals(awayTeamPBEX[2].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentAwayPitcher + " has been replaced by " + player + ". " + currentAwayPitcher + " threw: " + awayPitchesThrown.ToString() + " pitches." + "\n");
                 currentAwayPitcher = player;
                 awayPitchesThrown = 0;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
             else if (player.Equals(awayTeamPBEX[3].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentAwayPitcher + " has been replaced by " + player + ". " + currentAwayPitcher + " threw: " + awayPitchesThrown.ToString() + " pitches." + "\n");
                 currentAwayPitcher = player;
                 awayPitchesThrown = 0;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
             else if (player.Equals(awayTeamPBEX[4].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentAwayPitcher + " has been replaced by " + player + ". " + currentAwayPitcher + " threw: " + awayPitchesThrown.ToString() + " pitches." + "\n");
                 currentAwayPitcher = player;
                 awayPitchesThrown = 0;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             } 
             else if (player.Equals(awayTeamPBEX[5].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentAwayPitcher + " has been replaced by " + player + ". " + currentAwayPitcher + " threw: " + awayPitchesThrown.ToString() + " pitches." + "\n");
                 currentAwayPitcher = player;
                 awayPitchesThrown = 0;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
             else if (player.Equals(awayTeamPBEX[6].ToString())) //bench
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, awayTeamBattersX[GetABO()].ToString() + " has been replaced by " + player + "." + "\n");
                 awayTeamBattersX[GetABO()] = player;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
             else if (player.Equals(awayTeamPBEX[7].ToString())) //bench
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, awayTeamBattersX[GetABO()].ToString() + " has been replaced by " + player + "." + "\n");
                 awayTeamBattersX[GetABO()] = player;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
             else if (player.Equals(awayTeamPBEX[8].ToString())) //bench
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, awayTeamBattersX[GetABO()].ToString() + " has been replaced by " + player + "." + "\n");
                 awayTeamBattersX[GetABO()] = player;
-                awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+                awayPlayerA.PlaceholderText = setRosters_getATName.Substring(0, 3);
             }
         }
 
@@ -259,53 +266,53 @@ namespace BaseballGameCreator
                 currentHomePitcher = player;
                 homePitchesThrown = 0;
                 //homePlayerA.Items.RemoveAt(0);
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[2].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentHomePitcher + " has been replaced by " + player + ". " + currentHomePitcher + " threw: " + homePitchesThrown.ToString() + " pitches." + "\n");
                 currentHomePitcher = player;
                 homePitchesThrown = 0;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[3].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentHomePitcher + " has been replaced by " + player + ". " + currentHomePitcher + " threw: " + homePitchesThrown.ToString() + " pitches." + "\n");
                 currentHomePitcher = player;
                 homePitchesThrown = 0;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[4].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentHomePitcher + " has been replaced by " + player + ". " + currentHomePitcher + " threw: " + homePitchesThrown.ToString() + " pitches." + "\n");
                 currentHomePitcher = player;
                 homePitchesThrown = 0;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[5].ToString())) //bullpen
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, currentHomePitcher + " has been replaced by " + player + ". " + currentHomePitcher + " threw: " + homePitchesThrown.ToString() + " pitches." + "\n");
                 currentHomePitcher = player;
                 homePitchesThrown = 0;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[6].ToString())) //bench
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, homeTeamBattersX[GetHBO()].ToString() + " has been replaced by " + player + "." + "\n");
                 homeTeamBattersX[GetHBO()] = player;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[7].ToString())) //bench
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, homeTeamBattersX[GetHBO()].ToString() + " has been replaced by " + player + "." + "\n");
                 homeTeamBattersX[GetHBO()] = player;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
             else if (player.Equals(homeTeamPBEX[8].ToString())) //bench
             {
                 await Windows.Storage.FileIO.AppendTextAsync(gameLog, homeTeamBattersX[GetHBO()].ToString() + " has been replaced by " + player + "." + "\n");
                 homeTeamBattersX[GetHBO()] = player;
-                homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+                homePlayerA.PlaceholderText = setRosters_getHTName.Substring(0, 3);
             }
         }
 
@@ -1673,7 +1680,7 @@ namespace BaseballGameCreator
             else
             {
                 inn++;
-                await Windows.Storage.FileIO.AppendTextAsync(gameLog, "UPDATE- INN: " + TBInd.Text + inn2.ToString() + ", " + SetRosters.getATName().Substring(0, 3) + " " + atScore.ToString() + ": " + SetRosters.getHTName().Substring(0, 3) + ": " + htScore.ToString() + "\n");
+                await Windows.Storage.FileIO.AppendTextAsync(gameLog, "UPDATE- INN: " + TBInd.Text + inn2.ToString() + ", " + setRosters_getATName.Substring(0, 3) + " " + atScore.ToString() + ": " + setRosters_getHTName.Substring(0, 3) + ": " + htScore.ToString() + "\n");
                 homePitchesThrown--;
                 clearShapes();
             }
@@ -2077,7 +2084,7 @@ namespace BaseballGameCreator
             else
             {
                 inn++;
-                await Windows.Storage.FileIO.AppendTextAsync(gameLog, "UPDATE- INN: " + TBInd.Text + inn2.ToString() + ", " + SetRosters.getATName().Substring(0, 3) + " " + atScore.ToString() + ": " + SetRosters.getHTName().Substring(0, 3) + ": " + htScore.ToString() + "\n");
+                await Windows.Storage.FileIO.AppendTextAsync(gameLog, "UPDATE- INN: " + TBInd.Text + inn2.ToString() + ", " + setRosters_getATName.Substring(0, 3) + " " + atScore.ToString() + ": " + setRosters_getHTName.Substring(0, 3) + ": " + htScore.ToString() + "\n");
                 awayPitchesThrown--;
                 clearShapes();
             }
