@@ -85,17 +85,36 @@ namespace BaseballGameCreator
 
             awayTeamBattersX = SetRosters.getATBatters(); homeTeamBattersX = SetRosters.getHTBatters(); awayTeamPBEX = SetRosters.getATPBE(); homeTeamPBEX = SetRosters.getHTPBE();
 
-            ATNameT.Text = SetRosters.getATName().Substring(0, 3);
-            HTNameT.Text = SetRosters.getHTName().Substring(0, 3);
-            ATNameXYZ = SetRosters.getATName().Substring(0, 3);
-            HTNameXYZ = SetRosters.getHTName().Substring(0, 3);
-
-            awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+            //add check if team name is less than length 3, if so, use whole name instead of substring
+            if (SetRosters.getATName().Length < 3)
+            {
+                ATNameT.Text = SetRosters.getATName();
+                ATNameXYZ = SetRosters.getATName();
+                awayPlayerA.PlaceholderText = SetRosters.getATName();
+			}
+            else
+            {
+                ATNameT.Text = SetRosters.getATName().Substring(0, 3);
+                ATNameXYZ = SetRosters.getATName().Substring(0, 3);
+				awayPlayerA.PlaceholderText = SetRosters.getATName().Substring(0, 3);
+			}
+            if (SetRosters.getHTName().Length < 3)
+            {
+				HTNameT.Text = SetRosters.getHTName();
+				HTNameXYZ = SetRosters.getHTName();
+                homePlayerA.PlaceholderText = SetRosters.getHTName();
+			}
+            else
+            {
+				HTNameT.Text = SetRosters.getHTName().Substring(0, 3);
+				HTNameXYZ = SetRosters.getHTName().Substring(0, 3);
+				homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
+			}
+                
             for (int i = 1; i < awayTeamPBEX.Count; i++)
                 awayPlayerA.Items.Add(awayTeamPBEX[i]);
             for (int j = 1; j < homeTeamPBEX.Count; j++)
                 homePlayerA.Items.Add(homeTeamPBEX[j]);
-            homePlayerA.PlaceholderText = SetRosters.getHTName().Substring(0, 3);
 
             inn = 1; inn2 = inn;
 

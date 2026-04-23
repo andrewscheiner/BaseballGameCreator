@@ -38,48 +38,353 @@ namespace BaseballGameCreator
 
         public void saveLineups()
         {
-            awayTeamName = ATName.Text;
-            homeTeamName = HTName.Text;
+            //Teams
+            if (ATName.Text == "")
+            {
+                awayTeamName = "Away Team";
+            }
+            else
+            {
+				awayTeamName = ATName.Text;
+			}
 
-            awayTeamBatters.Add(ATBatter1.Text);
-            awayTeamBatters.Add(ATBatter2.Text);
-            awayTeamBatters.Add(ATBatter3.Text);
-            awayTeamBatters.Add(ATBatter4.Text);
-            awayTeamBatters.Add(ATBatter5.Text);
-            awayTeamBatters.Add(ATBatter6.Text);
-            awayTeamBatters.Add(ATBatter7.Text);
-            awayTeamBatters.Add(ATBatter8.Text);
-            awayTeamBatters.Add(ATBatter9.Text);
+			if (HTName.Text == "")
+			{
+				homeTeamName = "Home Team";
+			}
+			else
+			{
+				homeTeamName = HTName.Text;
+			}
+			
 
-            homeTeamBatters.Add(HTBatter1.Text);
-            homeTeamBatters.Add(HTBatter2.Text);
-            homeTeamBatters.Add(HTBatter3.Text);
-            homeTeamBatters.Add(HTBatter4.Text);
-            homeTeamBatters.Add(HTBatter5.Text);
-            homeTeamBatters.Add(HTBatter6.Text);
-            homeTeamBatters.Add(HTBatter7.Text);
-            homeTeamBatters.Add(HTBatter8.Text);
-            homeTeamBatters.Add(HTBatter9.Text);
+            // Away batters
+            if (ATBatter1.Text == "")
+            {
+                awayTeamBatters.Add("Away Leadoff Hitter");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter1.Text);
+            }
 
-            awayTeamPBE.Add(ATSPitcher.Text);
-            awayTeamPBE.Add(ATRPitcher1.Text);
-            awayTeamPBE.Add(ATRPitcher2.Text);
-            awayTeamPBE.Add(ATRPitcher3.Text);
-            awayTeamPBE.Add(ATSetupMan.Text);
-            awayTeamPBE.Add(ATCloser.Text);
-            awayTeamPBE.Add(ATBench1.Text);
-            awayTeamPBE.Add(ATBench2.Text);
-            awayTeamPBE.Add(ATBench3.Text);
+            if (ATBatter2.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 2");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter2.Text);
+            }
 
-            homeTeamPBE.Add(HTSPitcher.Text);
-            homeTeamPBE.Add(HTRPitcher1.Text);
-            homeTeamPBE.Add(HTRPitcher2.Text);
-            homeTeamPBE.Add(HTRPitcher3.Text);
-            homeTeamPBE.Add(HTSetupMan.Text);
-            homeTeamPBE.Add(HTCloser.Text);
-            homeTeamPBE.Add(HTBench1.Text);
-            homeTeamPBE.Add(HTBench2.Text);
-            homeTeamPBE.Add(HTBench3.Text);
+            if (ATBatter3.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 3");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter3.Text);
+            }
+
+            if (ATBatter4.Text == "")
+            {
+                awayTeamBatters.Add("Away Cleanup Hitter");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter4.Text);
+            }
+
+            if (ATBatter5.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 5");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter5.Text);
+            }
+
+            if (ATBatter6.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 6");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter6.Text);
+            }
+
+            if (ATBatter7.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 7");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter7.Text);
+            }
+
+            if (ATBatter8.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 8");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter8.Text);
+            }
+
+            if (ATBatter9.Text == "")
+            {
+                awayTeamBatters.Add("Away Batter 9");
+            }
+            else
+            {
+                awayTeamBatters.Add(ATBatter9.Text);
+            }
+
+            // Home batters
+            if (HTBatter1.Text == "")
+            {
+                homeTeamBatters.Add("Home Leadoff Hitter");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter1.Text);
+            }
+
+            if (HTBatter2.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 2");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter2.Text);
+            }
+
+            if (HTBatter3.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 3");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter3.Text);
+            }
+
+            if (HTBatter4.Text == "")
+            {
+                homeTeamBatters.Add("Home Cleanup Hitter");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter4.Text);
+            }
+
+            if (HTBatter5.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 5");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter5.Text);
+            }
+
+            if (HTBatter6.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 6");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter6.Text);
+            }
+
+            if (HTBatter7.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 7");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter7.Text);
+            }
+
+            if (HTBatter8.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 8");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter8.Text);
+            }
+
+            if (HTBatter9.Text == "")
+            {
+                homeTeamBatters.Add("Home Batter 9");
+            }
+            else
+            {
+                homeTeamBatters.Add(HTBatter9.Text);
+            }
+
+            // Away pitchers + bench (PBE)
+            if (ATSPitcher.Text == "")
+            {
+                awayTeamPBE.Add("Away SP");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATSPitcher.Text);
+            }
+
+            if (ATRPitcher1.Text == "")
+            {
+                awayTeamPBE.Add("Away RP 1");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATRPitcher1.Text);
+            }
+
+            if (ATRPitcher2.Text == "")
+            {
+                awayTeamPBE.Add("Away RP 2");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATRPitcher2.Text);
+            }
+
+            if (ATRPitcher3.Text == "")
+            {
+                awayTeamPBE.Add("Away RP 3");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATRPitcher3.Text);
+            }
+
+            if (ATSetupMan.Text == "")
+            {
+                awayTeamPBE.Add("Away Setup Man");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATSetupMan.Text);
+            }
+
+            if (ATCloser.Text == "")
+            {
+                awayTeamPBE.Add("Away Closer");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATCloser.Text);
+            }
+
+            if (ATBench1.Text == "")
+            {
+                awayTeamPBE.Add("Away Bench 1");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATBench1.Text);
+            }
+
+            if (ATBench2.Text == "")
+            {
+                awayTeamPBE.Add("Away Bench 2");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATBench2.Text);
+            }
+
+            if (ATBench3.Text == "")
+            {
+                awayTeamPBE.Add("Away Bench 3");
+            }
+            else
+            {
+                awayTeamPBE.Add(ATBench3.Text);
+            }
+
+            // Home pitchers + bench (PBE)
+            if (HTSPitcher.Text == "")
+            {
+                homeTeamPBE.Add("Home SP");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTSPitcher.Text);
+            }
+
+            if (HTRPitcher1.Text == "")
+            {
+                homeTeamPBE.Add("Home RP 1");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTRPitcher1.Text);
+            }
+
+            if (HTRPitcher2.Text == "")
+            {
+                homeTeamPBE.Add("Home RP 2");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTRPitcher2.Text);
+            }
+
+            if (HTRPitcher3.Text == "")
+            {
+                homeTeamPBE.Add("Home RP 3");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTRPitcher3.Text);
+            }
+
+            if (HTSetupMan.Text == "")
+            {
+                homeTeamPBE.Add("Home Setup Man");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTSetupMan.Text);
+            }
+
+            if (HTCloser.Text == "")
+            {
+                homeTeamPBE.Add("Home Closer");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTCloser.Text);
+            }
+
+            if (HTBench1.Text == "")
+            {
+                homeTeamPBE.Add("Home Bench 1");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTBench1.Text);
+            }
+
+            if (HTBench2.Text == "")
+            {
+                homeTeamPBE.Add("Home Bench 2");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTBench2.Text);
+            }
+
+            if (HTBench3.Text == "")
+            {
+                homeTeamPBE.Add("Home Bench 3");
+            }
+            else
+            {
+                homeTeamPBE.Add(HTBench3.Text);
+            }
         }
 
         public void nextScreen_Click(object sender, RoutedEventArgs e)
