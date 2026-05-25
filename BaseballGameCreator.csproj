@@ -139,6 +139,7 @@
     <Compile Include="BaseballGameScreen.xaml.cs">
       <DependentUpon>BaseballGameScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BaseballSimulation.cs" />
     <Compile Include="GameLogScreen.xaml.cs">
       <DependentUpon>GameLogScreen.xaml</DependentUpon>
     </Compile>
