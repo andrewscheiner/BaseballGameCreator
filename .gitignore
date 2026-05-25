@@ -367,3 +367,10 @@ FodyWeavers.xsd
 /Package.StoreAssociation.xml
 /Properties/AssemblyInfo.cs
 /Properties/Default.rd.xml
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
