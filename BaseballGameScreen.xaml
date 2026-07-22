@@ -13,10 +13,8 @@
             <RowDefinition Height="75"/>
             <RowDefinition Height="90"/>
             <RowDefinition Height="360"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="*"/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -155,38 +153,61 @@
         </StackPanel>
 
         <!-- Ball button (out-of-zone pitch) -->
-        <Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                Content="BALL" Width="160" Height="63" x:Name="BallButton" FontSize="28"
+		<Button Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Content="BALL" Width="160" Height="50" x:Name="BallButton" FontSize="28"
                 Click="Ball_Click" BorderBrush="Black" BorderThickness="2"
                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <!-- Action bar -->
-        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="This will serve as the game's main action bar!" x:Name="ActionBar" FontSize="18" FontWeight="SemiBold"/>
-        </StackPanel>
+		<!-- Scrollable Row 4 -->
+		<ScrollViewer Grid.Row="4" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto">
+			<!-- Row 4 container -->
+			<StackPanel Margin="10" Orientation="Vertical" Spacing="15">
 
-        <!-- Pitcher / batter info -->
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="2"/>
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Margin="15,15,0,0" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Pitching:" FontSize="18"/>
-                <TextBlock Text="  Player1 "  x:Name="currentlyPText" FontSize="18"/>
-                <TextBlock Text="     Pitches Thrown: " FontSize="18"/>
-                <TextBlock Text=" 00 " x:Name="pitchesThrownText" FontSize="18"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="At Bat: " FontSize="18"/>
-                <TextBlock Text="   Player2 " x:Name="atBatText" FontSize="18"/>
-                <TextBlock Text="     On Deck: " FontSize="18"/>
-                <TextBlock Text="   Player3 " x:Name="onDeckText" FontSize="18"/>
-                <TextBlock Text="     In the Hole:" FontSize="18"/>
-                <TextBlock Text="   Player4 " x:Name="inTheHoleText" FontSize="18"/>
-            </StackPanel>
-        </StackPanel>
+				<!-- Action bar -->
+				<TextBlock Text="This will serve as the game's main action bar!"
+                   x:Name="ActionBar"
+                   FontSize="18"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center"/>
 
-        <StackPanel Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Click="GameOver_Click" Content="END GAME" x:Name="gameOverButton" Width="250" FontSize="22" Height="45" BorderBrush="Black" BorderThickness="2"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        </StackPanel>
-    </Grid>
+				<!-- Pitcher / batter info border -->
+				<Border BorderBrush="Black" BorderThickness="2" Padding="10">
+					<StackPanel Orientation="Vertical" Spacing="10">
+
+						<!-- Pitching row -->
+						<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+							<TextBlock Text="Pitching:" FontSize="18"/>
+							<TextBlock Text="Player1" x:Name="currentlyPText" FontSize="18"/>
+							<TextBlock Text="Pitches Thrown:" FontSize="18"/>
+							<TextBlock Text="00" x:Name="pitchesThrownText" FontSize="18"/>
+						</StackPanel>
+
+						<!-- Batting row -->
+						<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+							<TextBlock Text="At Bat:" FontSize="18"/>
+							<TextBlock Text="Player2" x:Name="atBatText" FontSize="18"/>
+							<TextBlock Text="On Deck:" FontSize="18"/>
+							<TextBlock Text="Player3" x:Name="onDeckText" FontSize="18"/>
+							<TextBlock Text="In the Hole:" FontSize="18"/>
+							<TextBlock Text="Player4" x:Name="inTheHoleText" FontSize="18"/>
+						</StackPanel>
+
+					</StackPanel>
+				</Border>
+
+				<!-- End Game button -->
+				<Button Click="GameOver_Click"
+                Content="END GAME"
+                x:Name="gameOverButton"
+                Width="250"
+                Height="45"
+                FontSize="22"
+                BorderBrush="Black"
+                BorderThickness="2"
+                HorizontalAlignment="Center"/>
+			</StackPanel>
+		</ScrollViewer>
+
+
+	</Grid>
 </Page>
