@@ -22,6 +22,109 @@
             no longer pulls Reveal* types into the generated XamlTypeInfo.g.cs.
             =====================================================================
         -->
+		<Style TargetType="ComboBox">
+			<Setter Property="Background" Value="White"/>
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Padding" Value="6,3"/>
+			<Setter Property="FontFamily" Value="Segoe UI"/>
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ComboBox">
+						<Grid>
+							<!-- Outer border -->
+							<Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"/>
+
+							<!-- Display selected item -->
+							<ContentPresenter x:Name="ContentPresenter"
+                                      Margin="6,3"
+                                      Content="{TemplateBinding SelectedItem}"
+                                      ContentTemplate="{TemplateBinding ItemTemplate}"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Center"/>
+
+							<!-- Popup for dropdown -->
+							<Popup x:Name="Popup">
+								<Border Background="White"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                CornerRadius="4">
+									<ScrollViewer>
+										<ItemsPresenter/>
+									</ScrollViewer>
+								</Border>
+							</Popup>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style TargetType="ComboBoxItem">
+			<Setter Property="Background" Value="White"/>
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Padding" Value="6,3"/>
+			<Setter Property="FontFamily" Value="Segoe UI"/>
+			<Setter Property="FontSize" Value="18"/>
+
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="ComboBoxItem">
+						<Grid x:Name="RootGrid"
+                      Background="{TemplateBinding Background}">
+
+							<ContentPresenter x:Name="ContentPresenter"
+                                      Content="{TemplateBinding Content}"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      Padding="{TemplateBinding Padding}"/>
+
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+
+									<VisualState x:Name="Normal"/>
+
+									<VisualState x:Name="PointerOver">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid"
+                                                                   Storyboard.TargetProperty="Background">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="#E0E0E0"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+
+									<VisualState x:Name="Selected">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid"
+                                                                   Storyboard.TargetProperty="Background">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="#0078D7"/>
+											</ObjectAnimationUsingKeyFrames>
+
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
+                                                                   Storyboard.TargetProperty="Foreground">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="White"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+
 		<Style TargetType="TextBox">
 			<Setter Property="Background" Value="White"/>
 			<Setter Property="Foreground" Value="Black"/>

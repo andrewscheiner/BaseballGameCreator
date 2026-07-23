@@ -159,55 +159,54 @@
                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
 		<!-- Scrollable Row 4 -->
-		<ScrollViewer Grid.Row="4" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto">
-			<!-- Row 4 container -->
-			<StackPanel Margin="10" Orientation="Vertical" Spacing="15">
+		<ScrollViewer Grid.Row="4" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+			<Border BorderBrush="Black" BorderThickness="2" Padding="10" Margin="10">
+				<!-- Row 4 container -->
+				<StackPanel Margin="10" Orientation="Vertical" Spacing="15">
 
-				<!-- Action bar -->
-				<TextBlock Text="This will serve as the game's main action bar!"
-                   x:Name="ActionBar"
-                   FontSize="18"
-                   FontWeight="SemiBold"
-                   HorizontalAlignment="Center"/>
+					<!-- Action bar -->
+					<TextBlock Text="This will serve as the game's main action bar!"
+                       x:Name="ActionBar"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"/>
 
-				<!-- Pitcher / batter info border -->
-				<Border BorderBrush="Black" BorderThickness="2" Padding="10">
-					<StackPanel Orientation="Vertical" Spacing="10">
+					<!-- Pitcher / batter info border -->
+					<Border BorderBrush="Black" BorderThickness="2" Padding="10">
+						<StackPanel Orientation="Vertical" Spacing="10">
+							<!-- Pitching row -->
+							<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+								<TextBlock Text="Pitching:" FontSize="18"/>
+								<TextBlock Text="Player1" x:Name="currentlyPText" FontSize="18"/>
+								<TextBlock Text="Pitches Thrown:" FontSize="18"/>
+								<TextBlock Text="00" x:Name="pitchesThrownText" FontSize="18"/>
+							</StackPanel>
 
-						<!-- Pitching row -->
-						<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
-							<TextBlock Text="Pitching:" FontSize="18"/>
-							<TextBlock Text="Player1" x:Name="currentlyPText" FontSize="18"/>
-							<TextBlock Text="Pitches Thrown:" FontSize="18"/>
-							<TextBlock Text="00" x:Name="pitchesThrownText" FontSize="18"/>
+							<!-- Batting row -->
+							<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
+								<TextBlock Text="At Bat:" FontSize="18"/>
+								<TextBlock Text="Player2" x:Name="atBatText" FontSize="18"/>
+								<TextBlock Text="On Deck:" FontSize="18"/>
+								<TextBlock Text="Player3" x:Name="onDeckText" FontSize="18"/>
+								<TextBlock Text="In the Hole:" FontSize="18"/>
+								<TextBlock Text="Player4" x:Name="inTheHoleText" FontSize="18"/>
+							</StackPanel>
 						</StackPanel>
+					</Border>
 
-						<!-- Batting row -->
-						<StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Center">
-							<TextBlock Text="At Bat:" FontSize="18"/>
-							<TextBlock Text="Player2" x:Name="atBatText" FontSize="18"/>
-							<TextBlock Text="On Deck:" FontSize="18"/>
-							<TextBlock Text="Player3" x:Name="onDeckText" FontSize="18"/>
-							<TextBlock Text="In the Hole:" FontSize="18"/>
-							<TextBlock Text="Player4" x:Name="inTheHoleText" FontSize="18"/>
-						</StackPanel>
-
-					</StackPanel>
-				</Border>
-
-				<!-- End Game button -->
-				<Button Click="GameOver_Click"
-                Content="END GAME"
-                x:Name="gameOverButton"
-                Width="250"
-                Height="45"
-                FontSize="22"
-                BorderBrush="Black"
-                BorderThickness="2"
-                HorizontalAlignment="Center"/>
-			</StackPanel>
+					<!-- End Game button -->
+					<Button Click="GameOver_Click"
+                    Content="END GAME"
+                    x:Name="gameOverButton"
+                    Width="250"
+                    Height="45"
+                    FontSize="22"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    HorizontalAlignment="Center"/>
+				</StackPanel>
+			</Border>
 		</ScrollViewer>
-
 
 	</Grid>
 </Page>
