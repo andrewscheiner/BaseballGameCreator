@@ -1,6 +1,6 @@
 Baseball Game Creator Copyleft License (Version 1.0)
 
-Copyright © 2024 Andrew Scheiner
+Copyright © 2026 Scheiner Digital Solutions LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to use, modify, and distribute the Software under the following conditions:
 
